@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 19:18:27 by grmortel          #+#    #+#             */
-/*   Updated: 2023/03/16 15:53:09 by grmortel         ###   ########.fr       */
+/*   Created: 2023/03/26 05:22:20 by grmortel          #+#    #+#             */
+/*   Updated: 2023/03/26 05:41:28 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	if (fd < 0 || fd > 2)
+		return ;
+	write(fd, &c, 1);
 }

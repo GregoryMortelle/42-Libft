@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 19:14:07 by grmortel          #+#    #+#             */
-/*   Updated: 2023/03/16 16:08:54 by grmortel         ###   ########.fr       */
+/*   Created: 2023/03/26 16:54:32 by grmortel          #+#    #+#             */
+/*   Updated: 2023/03/26 16:56:46 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	return (0);
+	if (!s || fd < 0 || fd > 2)
+		return ;
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
