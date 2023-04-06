@@ -6,10 +6,49 @@
 #    By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 19:32:32 by grmortel          #+#    #+#              #
-#    Updated: 2023/03/15 19:34:10 by grmortel         ###   ########.fr        #
+#    Updated: 2023/04/06 14:55:42 by grmortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME : libft.a
+NAME = libft.a
 
-SOURCE : ft_isalpha.c / ft_islower.c / ft_isupper.c
+SRCS =	ft_atoi.c \
+		ft_bzero.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_isprint.c \
+		ft_memset.c \
+		ft_putchar_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_putstr_fd.c \
+		ft_strlen.c \
+		ft_tolower.c \
+		ft_toupper.c \
+		ft_strlcpy.c \
+
+OBJ = $(SRCS:.c=.o)
+
+HEAD = includes/
+
+CFLAGS = -Wall -Wextra -Werror
+
+$(NAME): $(OBJ)
+		ar -rc $(NAME) $(OBJ)
+
+.c.o:
+		cc $(CFLAGS) -c -I $(HEAD) $< -o $(<:.c=.o)
+
+all: $(NAME)
+
+clean:
+		rm -f $(OBJ)
+
+fclean: clean
+		rm -f $(NAME)
+
+re :	fclean $(NAME)
+
+.PHONY: all clean fclean re
