@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:06:54 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/06 14:58:11 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:14:08 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif
