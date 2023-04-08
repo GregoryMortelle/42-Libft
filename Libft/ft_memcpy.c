@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:27:41 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/07 15:46:23 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/07 16:34:06 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,25 @@ void	*ft_memcpy(void	*dst, const void *src, size_t n)
 	i = 0;
 	destination = (unsigned char *)dst;
 	source = (unsigned char *)src;
-	while (destination[i] && source[i] && n > 0)
+	while (n > i)
 	{
 		destination[i] = source[i];
 		i++;
 	}
-	destination[i] = '\0';
 	return (destination);
 }
 
 int main()
 {
-	char source[100] = "test";
-	char destination[100] = "tets";
+	char source[100] = "testt";
+	char *destination;
+	char *destination2;
 
-	printf("%s\n", ft_memcpy(source, destination, 100));
-	//ft_memcpy(source, destination, 10);
+	destination = malloc(sizeof(char) * 100);
+	destination2 = malloc(sizeof(char) * 100);
+	
+	destination = ft_memcpy(destination, source, 100);
+	printf("[%s]\n", destination);
+	destination2 = memcpy(destination2, source, 100);
+	printf("[%s]\n", destination2);
 }
