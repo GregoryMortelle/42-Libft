@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:07:54 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/06 13:48:14 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/11 11:17:24 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	count;
 
 	i = 0;
-	if (!dstsize)
-		return (0);
+	if (dstsize == 0)
+		return (dstsize);
 	while (src[i] && i < dstsize - 1)
 	{
 		dst[i] = src[i];

@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:58:01 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/08 23:03:08 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/11 10:49:37 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,4 @@ char	*ft_strrchr(const char *s, int c)
 		lenght--;
 	}
 	return (0);
-}
-
-int  main ()
-{
-	char *str;
-	str = "bonjourj yolo test";
-	char c = 'z';
-
-	printf("%s\n", ft_strrchr(str, c));
-	printf("%s\n", strrchr(str, c));
 }

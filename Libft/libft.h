@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:06:54 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/10 12:03:40 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/11 10:55:30 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
 void	*ft_calloc(size_t count, size_t size);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+char	*ft_strdup(const char *s);
+
 #endif
