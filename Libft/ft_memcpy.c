@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:27:41 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/11 16:18:39 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/11 19:30:11 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void	*dst, const void *src, size_t n)
 	unsigned char	*destination;
 	unsigned char	*source;
 
+	if (!dst && !src)
+		return (0);
 	i = 0;
 	destination = (unsigned char *)dst;
 	source = (unsigned char *)src;
@@ -28,3 +30,14 @@ void	*ft_memcpy(void	*dst, const void *src, size_t n)
 	}
 	return (destination);
 }
+
+/* int main(void)
+ {
+ 	char *str1 = NULL;
+ 	char str2[400];
+
+ 	ft_memcpy(NULL, NULL, 1);
+ 	printf("ft_memcpy : %s\n", str2);
+ 	printf("memcpy    : %s\n", (char *)memcpy(str1, str2, 7));
+ }
+*/
