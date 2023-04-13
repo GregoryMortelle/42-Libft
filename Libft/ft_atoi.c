@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:53:00 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/13 23:46:41 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/13 23:49:18 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,3 @@ int	ft_atoi(const char *nptr)
 		result *= sign;
 	return ((int)(result));
 }
-
- #include <stdlib.h>
-#include <limits.h>
-
-int main(int argc, char **argv)
-{
-	(void)argc;
-	printf("atoi de base : %d\n", atoi(argv[1]));
-	printf("ft_atoi      : %d\n", ft_atoi(argv[1]));
-} 
