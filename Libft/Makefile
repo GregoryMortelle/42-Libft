@@ -6,7 +6,7 @@
 #    By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 19:32:32 by grmortel          #+#    #+#              #
-#    Updated: 2023/04/11 10:54:51 by grmortel         ###   ########.fr        #
+#    Updated: 2023/04/12 20:52:42 by grmortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS =	ft_atoi.c \
 		ft_strdup.c \
 		ft_strchr.c \
 		ft_strrchr.c \
+		ft_substr.c \
 
 
 OBJ = $(SRCS:.c=.o)
