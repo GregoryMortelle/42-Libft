@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:53:00 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/13 23:49:18 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:31:50 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	ft_atoi(const char *nptr)
 		result *= 10;
 		result += *nptr - 48;
 			nptr++;
-		if (result > INT_MAX && sign == 1)
+		if (result > LONG_MAX && sign == 1)
 			return (-1);
-		if (result > INT_MAX && sign == -1)
+		if (result > LONG_MAX && sign == -1)
 			return (0);
 	}
 	if (sign)
