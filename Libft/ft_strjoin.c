@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:35:25 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/14 19:08:26 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/15 15:07:57 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
 	string = malloc(sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!string)
