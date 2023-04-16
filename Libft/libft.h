@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:06:54 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/15 16:39:35 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/16 12:24:39 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	**ft_split(char *str, char c);
+char	**ft_split(char const *s, char c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 
 #endif
