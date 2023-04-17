@@ -6,7 +6,7 @@
 #    By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 19:32:32 by grmortel          #+#    #+#              #
-#    Updated: 2023/04/16 00:44:35 by grmortel         ###   ########.fr        #
+#    Updated: 2023/04/18 00:06:14 by grmortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,16 +41,16 @@ SRCS =	ft_atoi.c \
 		ft_strnstr.c \
 		ft_strlcat.c \
 		ft_strjoin.c \
-		ft_split.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_strtrim.c \
 		ft_itoa.c \
+		ft_split.c \
 
 
 OBJ = $(SRCS:.c=.o)
 
-HEAD = includes/
+HEAD = includes
 
 CFLAGS = -Wall -Wextra -Werror
 

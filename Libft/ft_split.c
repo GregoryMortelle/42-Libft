@@ -5,122 +5,85 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 15:11:12 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/15 16:42:29 by grmortel         ###   ########.fr       */
+/*   Created: 2023/04/17 21:26:16 by grmortel          #+#    #+#             */
+/*   Updated: 2023/04/18 00:00:04 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_sep(char s, char c)
+static size_t	ft_string_length(const char *str, char c)
 {
-	if (s == c)
-		return (1);
-	return (0);
-}
-
-int	ft_word_count(char *str, char c)
-{
-	int	i;
-	int	words;
+	size_t	i;
+	size_t	length;
 
 	if (!str)
 		return (0);
 	i = 0;
-	words = 0;
+	length = 1;
 	while (str[i])
 	{
-		if (ft_sep(str[i + 1], c) == 1 && ft_sep(str[i], c) == 0)
-			words++;
-		else if (ft_sep(str[i], c) == 0 && str[i + 1] == '\0')
-			words++;
-		i++;
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i])
+			length++;
+		while (str[i] && str[i] != c)
+			i++;
 	}
-	return (words);
+	return (length);
 }
 
-int	put_word(char **tab, char *str, int *increment, int word_pos)
-{	
-	int	i;
-	int	j;
-	int	k;
-	int	word_size;
+static char	*ft_extract(const char *str, char c)
+{
+	size_t	len;
+	char	*substr;
 
-	i = increment[0];
-	j = increment[1];
-	word_size = 0;
-	word_size = j - i + 1;
-	tab[word_pos] = malloc(sizeof(char) * (word_size + 1));
-	if (!tab[word_pos])
-		return (-1);
-	k = 0;
-	while (i <= j)
+	len = 0;
+	while (str[len] && str[len] != c)
+		len++;
+	substr = malloc((len + 1) * sizeof(char));
+	if (!substr)
+		return (0);
+	ft_strlcpy(substr, str, len + 1);
+	return (substr);
+}
+
+static char	**ft_free(char **split, size_t i)
+{
+	while (i)
 	{
-		tab[word_pos][k] = str[i];
-		i++;
-		k++;
+		i--;
+		free(split[i]);
 	}
-	tab[word_pos][k] = '\0';
-	i++;
-	word_pos++;
-	return (i);
+	free(split);
+	return (0);
 }
 
-void	ft_write_str(char **tab, char *str, char c)
-{	
-	int	increment[2];
-	int	i;
-	int	j;
-	int	word_pos;
+char	**ft_split(const char *str, char c)
+{
+	char	**split;
+	size_t	i;
+	size_t	j;
 
+	split = malloc(ft_string_length(str, c) * sizeof(char *));
+	if (!str || !split)
+		return (0);
 	i = 0;
 	j = 0;
-	word_pos = 0;
-	while (str[j])
+	while (str[i])
 	{
-		if ((ft_sep(str[j + 1], c) == 1
-				|| !str[j + 1]) && ft_sep(str[j], c) == 0)
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i])
 		{
-			increment[0] = i;
-			increment[1] = j;
-			i = put_word(tab, str, increment, word_pos);
-			word_pos++;
+			split[j] = ft_extract(&str[i], c);
+			if (!split[j])
+				return (ft_free(split, j));
 			j++;
 		}
-		if (ft_sep(str[j], c) == 1)
-			i = j + 1;
-		j++;
+		while (str[i] && str[i] != c)
+			i++;
 	}
+	split[j] = 0;
+	return (split);
 }
-
-char	**ft_split(char *str, char c)
-{
-	int		word_count;
-	char	**tab;
-
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-	word_count = ft_word_count(str, c);
-	tab = malloc(sizeof(char *) * (word_count + 1));
-	if (!tab)
-		return (0);
-	tab[word_count] = 0;
-	ft_write_str(tab, str, c);
-	return (tab);
-}
-
-/*int main()
-{
-	char *str;
-	char c;
-	char *str2;
-
-	str = "test";
-	c = ' ';
-	str2 = *ft_split(str, c);
-
-	printf("%s\n", str2);
-
-}*/

@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 00:35:15 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/16 00:52:37 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:11:35 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ char	*ft_itoa(int n)
 	string[length] = '\0';
 	while (length)
 	{
-	string[length - 1] = tmp % 10 + '0';
-	tmp = tmp / 10;
-	length--;
+		string[length - 1] = tmp % 10 + '0';
+		tmp = tmp / 10;
+		length--;
 	}
 	if (n < 0)
 		string[0] = '-';

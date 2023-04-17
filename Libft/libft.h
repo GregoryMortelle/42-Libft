@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:06:54 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/16 12:24:39 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:10:30 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include <stdio.h>
-# include <stdio.h>
-# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
