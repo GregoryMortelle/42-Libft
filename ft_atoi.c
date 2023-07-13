@@ -6,18 +6,27 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 18:53:00 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/14 11:31:50 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/18 19:30:07 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_whitespace(char c)
+{
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_atoi(const char *nptr)
 {
-	unsigned long long	result;
-	int					sign;
+	long long	result;
+	long long	tmp;
+	int			sign;
 
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+	while (ft_whitespace(*nptr) == 1)
 		nptr++;
 	sign = 1;
 	if (*nptr == 43 || *nptr == 45)
@@ -28,12 +37,11 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	while (*nptr && *nptr >= 48 && *nptr <= 57)
 	{
-		result *= 10;
-		result += *nptr - 48;
-			nptr++;
-		if (result > LONG_MAX && sign == 1)
+		tmp = result;
+		result = (result * 10) + (*nptr++ - 48);
+		if (result < tmp && sign == 1)
 			return (-1);
-		if (result > LONG_MAX && sign == -1)
+		if (result < tmp && sign == -1)
 			return (0);
 	}
 	if (sign)

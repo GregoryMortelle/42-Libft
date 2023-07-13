@@ -6,7 +6,7 @@
 #    By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 19:32:32 by grmortel          #+#    #+#              #
-#    Updated: 2023/04/18 18:19:39 by grmortel         ###   ########.fr        #
+#    Updated: 2023/04/18 18:39:14 by grmortel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ AR = ar -rcs
 
 CFLAGS = -Wall -Wextra -Werror
 
-CC = gcc
+GCC = gcc
 
 RM = rm -f
 
@@ -73,7 +73,7 @@ $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(GCC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 

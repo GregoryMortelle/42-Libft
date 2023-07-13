@@ -6,7 +6,7 @@
 /*   By: grmortel <grmortel@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:24:34 by grmortel          #+#    #+#             */
-/*   Updated: 2023/04/13 16:58:16 by grmortel         ###   ########.fr       */
+/*   Updated: 2023/04/18 19:31:56 by grmortel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	string[i] = '\0';
 	return (string);
 }
-
-// int main(void)
-// {
-// 	printf("%s\n", ft_substr("coubou", 3, 600));
-// 	printf("%s\n", "hello");
-// 	system("leaks a.out");
-// }
